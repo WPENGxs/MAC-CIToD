@@ -38,29 +38,28 @@ pip install openai tqdm scikit-learn
 --> client_deepinfra = OpenAI(api_key="deepinfra api key", base_url="https://api.deepinfra.com/v1/openai")
 ```
 
-4. (Optional) If you want to run the model locally, please configure the environment and modify the code in main.py and os_model.py as required:
+4. (Optional) If you want to run the model locally, please configure the environment and modify the code in `main.py` and `os_model.py` as required:
 
-&nbsp;&nbsp;&nbsp;&nbsp;4.1 Install the required packages:
+4.1 Install the required packages:
 ```bash
 pip install transformers vllm
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;4.2 In `main.py`, replace the generator assignment:
-
-    # main.py
-    elif args.model_name == 'llama':
-        # eval_model = model('meta-llama/Meta-Llama-3.1-8B-Instruct')
-        # generator = eval_model.deepinfra_generator
-        generator = os_model.llama3_generator # use generator from os_model.py instead of model.py
-
-In `os_model.py`, set `model_name` to your local model path:
-
-    # os_model.py
-    def llama3_generator(...):
-        ...
-        model_name = "mistral_model" # replace it with your local model path
-        ...
-&nbsp;&nbsp;&nbsp;&nbsp;ps: for the GLM4 model, DeepInfra does not currently support providing a GLM4 API. You will need to download it yourself from websites such as Hugging Face or ModelScope. On Hugging Face, the model is named `THUDM/glm-4-9b-chat`.
+4.2 In `main.py`, replace the generator assignment:
+```python
+elif args.model_name == 'llama':
+    # eval_model = model('meta-llama/Meta-Llama-3.1-8B-Instruct')
+    # generator = eval_model.deepinfra_generator
+--> generator = os_model.llama3_generator # use generator from os_model.py instead of model.py
+```
+4.3 In `os_model.py`, set `model_name` to your local model path:
+```python
+def llama3_generator(...):
+    ...
+--> model_name = "model_path" # replace it with your local model path
+    ...
+```
+>PS: for the GLM4 model, DeepInfra does not currently support providing a GLM4 API. You will need to download it yourself from websites such as Hugging Face or ModelScope. On Hugging Face, the model is named `THUDM/glm-4-9b-chat`.
 
 5. Run our code:
 ```bash
