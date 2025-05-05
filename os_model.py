@@ -3,40 +3,6 @@ BREAK_TIMES_LIMIT = 5
 class os_model():
     cached_models = {}
     cached_tokenizers = {}
-
-    def mistral_generator(text,history=[]):
-        from transformers import AutoTokenizer
-        from vllm import LLM, SamplingParams
-        sampling_params = SamplingParams(temperature=0.7, top_p=0.8, repetition_penalty=1.05, max_tokens=512)
-        if 'mistral' not in model.cached_models:
-            model_name = "mistral"
-
-            mistral_model = LLM(
-                model=model_name
-            )
-
-            model.cached_models['mistral'] = mistral_model
-        else:
-            mistral_model = model.cached_models['mistral']
-        if history == []:
-            history = [
-                {"role": "system", "content": 'you are a helpful assistant'},
-                {"role": "user", "content": text},
-            ]
-        else:
-            history = history.append({"role": "user", "content": text})
-        try:
-            res = mistral_model.chat(messages=history, sampling_params=sampling_params)
-            message = res[0].outputs[0].text
-        except Exception as e:
-            print(e)
-            import sys
-            sys.exit(1)
-            message = "Error"
-
-        history.append({"role": "system", "content": message})
-        return message, history
-
     def llama3_generator(text, history=[], language='en', mode='direct'):
         from transformers import AutoTokenizer
         from vllm import LLM, SamplingParams
