@@ -24,12 +24,12 @@ conda create -n mac_citod python=3.10
 conda activate mac_citod
 ```
 
-1. Install environment:
+2. Install environment:
 ```bash
 pip install openai tqdm scikit-learn
 ```
 
-1. (Optional) If you want to run a model based on the API platform, please configure the API key of the corresponding platform in `model.py`:
+3. (Optional) If you want to run a model based on the API platform, please configure the API key of the corresponding platform in `model.py`:
 ```python
 # openai, including gpt-3.5-turbo, gpt-4o
 --> client_gpt = OpenAI(api_key="openai api key", base_url="https://api.openai.com/v1")
