@@ -2,7 +2,7 @@
 
 <p align="center">
   <b>
-  [<a href="paper_url">Paper</a>]
+  [<a href="https://doi.org/10.24963/ijcai.2025/918">Paper</a>]
   </b>
   <br/>
 </p>
@@ -106,7 +106,20 @@ In addition, you can get output log in `./log/MODEL_NAME/output_CONNECTION.json`
 ## Reference
 If you find this project useful for your research, please consider citing the following paper:
 ```
-@article
+@inproceedings{ijcai2025p918,
+  title     = {Improving Consistency Identification in Task-oriented Dialogue Through Multi-Agent Collaboration},
+  author    = {Wang, Peng and Li, Shuo and Zhou, Ruoxi and Chen, Qiguang and Xu, Xiao and Fei, Hao and Li, Dagang and Che, Wanxiang and Qin, Libo},
+  booktitle = {Proceedings of the Thirty-Fourth International Joint Conference on
+               Artificial Intelligence, {IJCAI-25}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  editor    = {James Kwok},
+  pages     = {8259--8267},
+  year      = {2025},
+  month     = {8},
+  note      = {Main Track},
+  doi       = {10.24963/ijcai.2025/918},
+  url       = {https://doi.org/10.24963/ijcai.2025/918},
+}
 ```
 
 ## Contact
