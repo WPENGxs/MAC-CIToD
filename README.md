@@ -105,7 +105,7 @@ In addition, you can get output log in `./log/MODEL_NAME/output_CONNECTION.json`
 
 ## Reference
 If you find this project useful for your research, please consider citing the following paper:
-```
+```bibtex
 @inproceedings{ijcai2025p918,
   title     = {Improving Consistency Identification in Task-oriented Dialogue Through Multi-Agent Collaboration},
   author    = {Wang, Peng and Li, Shuo and Zhou, Ruoxi and Chen, Qiguang and Xu, Xiao and Fei, Hao and Li, Dagang and Che, Wanxiang and Qin, Libo},
